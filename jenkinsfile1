@@ -10,7 +10,7 @@ node{
     }
     stage('SonarQube analysis') {
         def mvnHome = tool name: 'maven3', type: 'maven'
-        withSonarQubeEnv(credentialsId: 'f225455e-ea59-40fa-8af7-08176e86507a', installationName: 'Sonar-8') { // You can override the credential to be used
+        withSonarQubeEnv(credentialsId: '1fc2505fa93bc1459911063e29683eca78c1d543', installationName: 'Sonar-8') { // You can override the credential to be used
           sh '${mvnHome}/bin/mvn sonar:sonar'
     }
   }
