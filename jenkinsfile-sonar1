@@ -5,7 +5,7 @@ node {
   stage('SonarQube analysis') {
     def mvnHome = tool name: 'maven-latest', type: 'maven'
     withSonarQubeEnv('sonar-latest') { // If you have configured more than one global server connection, you can specify its name
-      sh "${mvnHomw}/bin/mvn sonar:sonar"
+      sh "${mvnHome}/bin/mvn sonar:sonar"
     }
   }
 }
