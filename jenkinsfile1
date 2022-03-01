@@ -5,11 +5,11 @@ node{
         git url: "https://github.com/dileep208/my-app.git", branch: "${params.branch}"
     }
     stage('Compile-Package'){
-        sh "mvn package"
+        sh "sudo mvn package"
     }
     stage('SonarQube analysis') {
         withSonarQubeEnv('sonar-latest') { // You can override the credential to be used
-          sh 'mvn sonar:sonar'
+          sh 'sudo mvn sonar:sonar'
     }
   }
     // stage('Email Notification'){
