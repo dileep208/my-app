@@ -1,0 +1,10 @@
+node {
+  stage('SCM') {
+    git 'https://github.com/foo/bar.git'
+  }
+  stage('SonarQube analysis') {
+    withSonarQubeEnv('sonar-latest') { // If you have configured more than one global server connection, you can specify its name
+      sh "sudo mvn sonar:sonar"
+    }
+  }
+}
