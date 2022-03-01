@@ -1,10 +1,11 @@
 node {
   stage('SCM') {
-    git 'https://github.com/foo/bar.git'
+    git 'https://github.com/dileep208/my-app.git'
   }
   stage('SonarQube analysis') {
+    def mvnHome = tool name: 'maven-latest', type: 'maven'
     withSonarQubeEnv('sonar-latest') { // If you have configured more than one global server connection, you can specify its name
-      sh "sudo mvn sonar:sonar"
+      sh "${mvnHomw}/bin/mvn sonar:sonar"
     }
   }
 }
