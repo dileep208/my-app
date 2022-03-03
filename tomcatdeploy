@@ -7,8 +7,8 @@ node {
     }
     stage('Deploy') {
        sshagent(['tomcatCredentials']) {
-            sh 'scp -o StrictHostKeyChecking=no target/*.war ubuntu@172.31.24.233:/opt/tomcat8/webapps'
-  }
-    }
+            sh 'scp -o StrictHostKeyChecking=no target/*.war ubuntu@172.31.24.233:/opt/tomcat8/webapps/'
+       }
+   }
 
 }
