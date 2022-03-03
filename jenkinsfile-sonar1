@@ -1,5 +1,6 @@
 node {
     stage('SCM-Checkout') {
+        echo 'Welcome dileep'
         git 'https://github.com/dileep208/my-app.git'
     }
     stage('Compile-package') {
