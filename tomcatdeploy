@@ -6,7 +6,7 @@ node {
         sh 'mvn clean package'
     }
     stage('Deploy') {
-        sshagent (credentials: ['tomcat']) {
+        sshagent (credentials: ['tomcatCredentials']) {
             sh 'ssh -o StrictHostKeyChecking=no target/*.war ec2-user@18.191.153.245:/opt/tomcat8/webapps'
   }
     }
