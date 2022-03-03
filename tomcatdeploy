@@ -1,0 +1,14 @@
+node {
+    state('SCM') {
+        git 'https://github.com/dileep208/my-app.git'
+    }
+    stage('Compile-Package') {
+        sh 'mvn clean package'
+    }
+    stage('Deploy') {
+        sshagent (credentials: ['tomcat']) {
+            sh 'ssh -o StrictHostKeyChecking=no target/*.war ec2-user@18.191.153.245:/opt/tomcat8/webapps'
+  }
+    }
+
+}
