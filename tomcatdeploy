@@ -1,5 +1,5 @@
 node {
-    state('SCM') {
+    stage('SCM') {
         git 'https://github.com/dileep208/my-app.git'
     }
     stage('Compile-Package') {
